@@ -1,0 +1,19 @@
+{
+  "name": "constructorhangmanjjw",
+  "version": "1.0.0",
+  "description": "jjw hangman",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwin4740/constructorhangmanjjw.git"
+  },
+  "author": "James J Winkle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwin4740/constructorhangmanjjw/issues"
+  },
+  "homepage": "https://github.com/jwin4740/constructorhangmanjjw#readme"
+}
