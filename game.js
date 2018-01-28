@@ -1,4 +1,25 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
+const utils = require("./utils/utils.js");
+const Round = require("./utils/roundConstruct.js");
+const Table = require("tty-table");
+const chalk = require('chalk');
+const mongojs = require("mongojs");
+let db = mongojs('trivia2');
+let qCollection = db.collection('questions');
+let cCollection = db.collection('categories');
+let won = false;
+
+
+// cCollection.find(function (err, docs) {
+//     docs.forEach((val) => {
+//         let temp = val.category_name;
+
+//         categoryArray.push(temp);
+//         categoryArray.sort();
+
+//     });
+//     play();
+// });
 var Word = require('./word.js');
 const wordList = ['TIMBERWOLVES', 'JAGUARS', 'CAVELIERS', 'CLIPPERS', 'PIRATES', 'PANTHERS', 'ASTROS', 'ROCKETS', 'CARDINALS', 'PACERS'];
 // CLIPPERS
@@ -25,7 +46,8 @@ let game = {
 	startGame: function () {
 		console.log(`\n------WELCOME TO HANGMAN--------\n`);
 		this.generateWord();
-		console.log(this.renderBoard());
+		// console.log(this.renderBoard());
+		utils.renderDisplay(game);
 		this.makeGuess();
 	},
 	evaluateGuess: function (guess) {
